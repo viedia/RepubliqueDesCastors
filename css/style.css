@@ -1,0 +1,24 @@
+#navigation{
+    width: 200px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#navigation li{
+    background: gray;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid darkslategray;
+    margin-bottom: 1px;
+}
+
+#navigation li:hover{
+    background: #900;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid darkslategray;
+    margin-bottom: 1px;
+}
