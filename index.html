@@ -4,14 +4,41 @@
           <title>La république des Castors</title>
           <meta charset="UTF-8">
           <link href="css/style.css" rel="stylesheet" type="text/css" />
+          <h1>La république des Castors</h1>
+          <script type="text/javascript" src="js/canva.js"/></script>
+          <script src="js/cytoscape.js"/></script>
+         
     </head>
     <body>
+ 	<div id="menu">
         <ul id="navigation">
             <li>Salle des transport</li>
             <li>Salle des finances</li>
             <li>Salle des rivières</li>
-            <li>menu 4</li>
         </ul>
+	</div>
+    <div id="cy">
+        <script>
+            var cy = cytoscape({
+                container: document.getElementById('cy'),
+                elements: [
+                    { data: { id: 'a' } },
+                    { data: { id: 'b' } },
+                    {
+                    data: {
+                        id: 'ab',
+                        source: 'a',
+                        target: 'b'
+                    }
+                    }]
+                });
+        </script>
+    </div>
+   <!-- <div id="carte">
+        <canvas id="canvas">Votre navigateur ne supporte pas HTML5, veuillez le mettre à jour
+        
+        </canvas>
+    </div>
     <!--Mettre les scripts en dessous-->
     </body>
 </html>

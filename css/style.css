@@ -1,13 +1,23 @@
+h1{
+    text-align: center;
+}
+
+
+/*Relatif au menu de navigation*/
+#menu{
+	float: left;
+}
 #navigation{
     width: 200px;
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 0;	
 }
 
 #navigation li{
     background: gray;
     color: #fff;
+	font-size: 20px;
     text-align: center;
     text-decoration: none;
     border: 1px solid darkslategray;
@@ -21,4 +31,32 @@
     text-decoration: none;
     border: 1px solid darkslategray;
     margin-bottom: 1px;
+}
+/*Carte*/
+#cy{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+#carte{
+    margin-left: 245px;
+    margin-right: 245px;
+    width: 75%;
+    height: 750px;
+    border: 1px solid red;
+}
+canvas{
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+}
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+body {
+	min-height: 100%;
 }
