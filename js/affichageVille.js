@@ -1,16 +1,29 @@
 "use strict";
+class FenetrePrincipale
+{
 
-
-var cy = cytoscape({
-container: document.getElementById('cy'),
-        elements: [
-        { data: { id: 'a' } },
-        { data: { id: 'b' } },
+constructor(){
+    var cy = cytoscape({
+    container: document.getElementById('cy'),
+            elements: [
+            { data: { id: 'a', name:'Mairie' } },
+            { data: { id: 'b', name: 'Batiment transport' } },
+            {
+                data: {
+                id: 'ab',
+                source: 'a',
+                target: 'b'
+            }
+        }],
+        style: [ // the stylesheet for the graph
         {
-            data: {
-             id: 'ab',
-             source: 'a',
-               target: 'b'
-          }
-    }]
-});
+        selector: 'node',
+        style: {
+            'background-color': '#666',
+            'label': 'data(name)'
+        }
+        }]
+    });
+}
+
+}
