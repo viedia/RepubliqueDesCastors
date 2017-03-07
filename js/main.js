@@ -1,7 +1,7 @@
 "use strict";
-var fenetreP;
+var ctrl = null;
 
-$(window).ready(function ()
-{
-	fenetreP = new FenetrePrincipale();
+$(window).ready(function () {
+    ctrl = new controleur();
+    ctrl.initialiser();
 });

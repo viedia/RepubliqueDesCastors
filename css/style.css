@@ -1,5 +1,6 @@
 h1{
     text-align: center;
+    font-family: Verdana;
 }
 
 
@@ -7,26 +8,31 @@ h1{
 #menu{
 	float: left;
     position: relative;
+    font-family: arial;
 }
-#navigation{
-    width: 200px;
-    list-style: none;
-    margin: 0;
-    padding: 0;	
-}
-
-#navigation li{
-    background: gray;
-    color: #fff;
-	font-size: 20px;
-    text-align: center;
-    text-decoration: none;
-    border: 1px solid darkslategray;
-    margin-bottom: 1px;
+.onglets
+{
+	list-style-type: none;
+	padding: 0px;
+	margin-bottom: -1px;
 }
 
-#navigation li:hover{
-    background: #900;
+.onglet
+{
+	padding: 10px;
+	background-color: #DDDDDD;
+	border: 1px solid #AAAAAA;
+	cursor: pointer;
+}
+
+.onglet.actif
+{
+	background-color:#18aee0 ;
+	border-bottom: 1px solid #FFFFFF;
+}
+
+.onglets li:hover{
+    background: #01ffff;
     color: #fff;
     text-align: center;
     text-decoration: none;
@@ -46,4 +52,9 @@ h1{
     width: 75%;
     height: 750px;
     border: 1px solid red;
+}
+.onglet.actif
+{
+	background: #18aee0;
+	border-bottom: 3px solid #FFFFFF;
 }
