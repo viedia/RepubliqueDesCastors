@@ -33,7 +33,7 @@ h1{
 
 .onglets li:hover{
     background: #01ffff;
-    color: #fff;
+    color: lightslategrey;
     text-align: center;
     text-decoration: none;
     border: 1px solid darkslategray;
