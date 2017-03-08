@@ -4,6 +4,10 @@ class Vue {
     constructor(c) {
         this.controleur = c;
         this.attacherEvenements();
+        this.cy = cytoscape({
+            container: document.getElementById('cy')
+        });
+        this.afficherVille();
     }
 
     attacherEvenements() {
@@ -21,5 +25,18 @@ class Vue {
         $('.panelOnglet').eq(position).addClass('actif')
     }
 
+    afficherVille(){
+        for(var b in this.controleur.getVille().getBatiments() )
+        {
+            for(var v in b.getVoisins())
+            {
+                this.cy.add([{ 
+                    group: "nodes", data: { id: b.getNom() }  },
+                    { group: "nodes", data: { id: v.getNom() } },
+                    { group: "edges", data: { id: "-", source: b.getNom(), target: v.getNom() } }
+                ])
+            }
 
+        }
+   }
 }

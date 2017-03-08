@@ -1,8 +1,13 @@
 ﻿"use strict";
 class controleur {
-    constructor() {
+     constructor() {
         this.vue = null;
-        this.carte = new Carte();
+        //this.carte = new Carte();
+        this.ville = new Ville();
+        var a = [new Batiment("voisin 1 ")];
+        this.ville.ajouterBatiment(new Batiment("test", a));
+
+        this.initialiser();
     }
 
     initialiser() {
@@ -11,5 +16,10 @@ class controleur {
 
     selectionnerOnglet(o) {
         this.vue.selectionnerOnglet(o);
+    }
+
+    getVille()
+    {
+        return this.ville;
     }
 }
