@@ -5,7 +5,6 @@ class controleur {
         //this.carte = new Carte();
         this.ville = new Ville();
         var a = [new Batiment("voisin 1 ")];
-        this.ville.ajouterBatiment(new Batiment("test", a));
 
         this.initialiser();
     }

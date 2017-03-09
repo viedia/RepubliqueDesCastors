@@ -5,7 +5,15 @@ class Vue {
         this.controleur = c;
         this.attacherEvenements();
         this.cy = cytoscape({
-            container: document.getElementById('cy')
+            container: document.getElementById('cy'),
+           style: [ // the stylesheet for the graph
+                {
+                    selector: 'node',
+                    style: {
+                        'background-color': '#666',
+                        'label': 'data(name)'
+                    }
+                }]
         });
         this.afficherVille();
     }
@@ -26,17 +34,17 @@ class Vue {
     }
 
     afficherVille(){
-        for(var b in this.controleur.getVille().getBatiments() )
-        {
-            for(var v in b.getVoisins())
-            {
+        var batS,bat;
+        var tabBat = this.controleur.getVille().getBatiments(); /*= new Array(); tabBat = */
+        for(var i =0; i<tabBat.length;i++){
+            batS = tabBat[i];
+            for(var j =0; j<batS.getVoisins().length;j++){
                 this.cy.add([{ 
-                    group: "nodes", data: { id: b.getNom() }  },
-                    { group: "nodes", data: { id: v.getNom() } },
-                    { group: "edges", data: { id: "-", source: b.getNom(), target: v.getNom() } }
+                     data: { id: batS.getNom(), name:batS.getNom() }  },
+                    { data: { id: batS.getVoisins()[j].getNom(), name :batS.getVoisins()[j].getNom() } },
+                    { data: { id: "-", source: batS.getNom(), target: batS.getVoisins()[j].getNom() } },
                 ])
             }
-
         }
    }
 }

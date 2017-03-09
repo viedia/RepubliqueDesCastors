@@ -3,7 +3,8 @@ class Ville
 {
     constructor()
     {
-        var bat = new Batiment("Mairie");
+        var v = [new Batiment("copain")];
+        var bat = new Batiment("Mairie", v);
         this.batiments = [bat];
     }
 
