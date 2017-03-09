@@ -2,7 +2,7 @@
 class controleur {
      constructor() {
         this.vue = null;
-        //this.carte = new Carte();
+        this.jour = 1;
         this.ville = new Ville();
         var a = [new Batiment("voisin 1 ")];
 
@@ -17,8 +17,20 @@ class controleur {
         this.vue.selectionnerOnglet(o);
     }
 
+    jourSuivant()
+    {
+        this.jour+=1;
+        this.ville.jourSuivant();
+    }
+
     getVille()
     {
         return this.ville;
     }
+
+    getJour()
+    {
+        return this.jour;
+    }
+
 }
