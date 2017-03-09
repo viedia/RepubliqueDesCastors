@@ -3,5 +3,4 @@ var ctrl = null;
 
 $(window).ready(function () {
     ctrl = new controleur();
-    ctrl.initialiser();
 });

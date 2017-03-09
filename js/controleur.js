@@ -1,8 +1,12 @@
 ﻿"use strict";
 class controleur {
-    constructor() {
+     constructor() {
         this.vue = null;
-        this.carte = new Carte();
+        this.jour = 1;
+        this.ville = new Ville();
+        var a = [new Batiment("voisin 1 ")];
+
+        this.initialiser();
     }
 
     initialiser() {
@@ -12,4 +16,21 @@ class controleur {
     selectionnerOnglet(o) {
         this.vue.selectionnerOnglet(o);
     }
+
+    jourSuivant()
+    {
+        this.jour+=1;
+        this.ville.jourSuivant();
+    }
+
+    getVille()
+    {
+        return this.ville;
+    }
+
+    getJour()
+    {
+        return this.jour;
+    }
+
 }

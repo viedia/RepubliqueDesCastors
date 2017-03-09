@@ -39,6 +39,10 @@ h1{
     border: 1px solid darkslategray;
     margin-bottom: 1px;
 }
+#action{
+    float: left;
+    position: absolute;
+}
 /*Carte*/
 #cy{  
     width: 100%;
@@ -52,9 +56,4 @@ h1{
     width: 75%;
     height: 750px;
     border: 1px solid red;
-}
-.onglet.actif
-{
-	background: #18aee0;
-	border-bottom: 3px solid #FFFFFF;
 }
