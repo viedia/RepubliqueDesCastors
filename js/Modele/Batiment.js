@@ -12,7 +12,6 @@ class Batiment
         if(this.voisins.indexOf(nouveauVoisin)== -1)
         {   
             this.voisins.push(nouveauVoisin);
-            nouveauVoisin.ajouterVoisin(this);
          }
     }
     getNom()

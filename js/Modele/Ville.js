@@ -9,9 +9,17 @@ class Ville
         this.batiments = [bat];
     }
 
-    ajouterBatiment(nom)
+    ajouterBatiment(batiment, voisin = null)
     {
-        this.batiments.push(new Batiment(nom));
+        var nouveauBat= batiment;
+        this.batiments.push(nouveauBat);
+        if(voisin != null)
+        {
+            var bat1 =this.batiments[this.batiments.indexOf(voisin)];
+            var bat2 = this.batiments[this.batiments.indexOf(nouveauBat)];
+            bat1.ajouterVoisin(nouveauBat);
+            bat2.ajouterVoisin( voisin);
+        }
     }
 
 /**

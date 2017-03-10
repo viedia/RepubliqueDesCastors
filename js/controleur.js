@@ -4,8 +4,10 @@ class controleur {
         this.vue = null;
         this.jour = 1;
         this.ville = new Ville();
-        var a = [new Batiment("voisin 1 ")];
-
+        var a = new Batiment("voisin 1 ");
+        var b = new Batiment("voisin 2 ");
+        this.ville.ajouterBatiment(a);
+        this.ville.ajouterBatiment(b, a);
         this.initialiser();
     }
 

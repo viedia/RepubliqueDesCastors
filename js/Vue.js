@@ -20,10 +20,13 @@ class Vue {
 
     attacherEvenements() {
         var that = this;
-        $('.onglet').click(function () {
+        $('.onglet.finance').click(function () {
             that.controleur.selectionnerOnglet($(this));
+            that.ouvrirFenetreFinance();
         });
-        $('#btn-passer').click(function(){that.controleur.jourSuivant()});
+        $('#btn-passer').click(function(){
+            that.controleur.jourSuivant()
+        });
     }
 
     selectionnerOnglet(o) {
@@ -32,6 +35,11 @@ class Vue {
         $('.panelOnglet.actif').removeClass('actif');
         var position = $('.onglet').index(o);
         $('.panelOnglet').eq(position).addClass('actif')
+    }
+
+    ouvrirFenetreFinance()
+    {
+        window.open("indexFinance.html","",'width=500, height=500, top=101, left=101');
     }
 
 /**
