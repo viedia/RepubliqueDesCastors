@@ -39,7 +39,7 @@ class Vue {
 
     ouvrirFenetreFinance()
     {
-        window.open("indexFinance.html","",'width=500, height=500, top=101, left=101');
+        window.open("indexFinance","",'width=500, height=500, top=101, left=101');
     }
 
 /**

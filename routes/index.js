@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
 });
 
 /* GET finance page. */
-router.get('/finance', function(req, res) {
+router.get('/indexFinance', function (req, res) {
     res.render('indexFinance');
 });
 
