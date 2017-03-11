@@ -1,0 +1,8 @@
+--- Republique Des Castors ---
+
+(Ne pas oublier d'installer node.js : https://nodejs.org/en/ )
+
+1- Se placer dans le dossier avec la console cmder
+2- Executer la commande : npm install
+3- npm start
+4- Le site est accessible en localhost sur le port 3000 (localhost:3000 ou 127.0.0.1:3000)

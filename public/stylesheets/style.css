@@ -1,0 +1,59 @@
+h1{
+    text-align: center;
+    font-family: Verdana;
+}
+
+
+/*Relatif au menu de navigation*/
+#menu{
+	float: left;
+    position: relative;
+    font-family: arial;
+}
+.onglets
+{
+	list-style-type: none;
+	padding: 0px;
+	margin-bottom: -1px;
+}
+
+.onglet
+{
+	padding: 10px;
+	background-color: #DDDDDD;
+	border: 1px solid #AAAAAA;
+	cursor: pointer;
+}
+
+.onglet.actif
+{
+	background-color:#18aee0 ;
+	border-bottom: 1px solid #FFFFFF;
+}
+
+.onglets li:hover{
+    background: #01ffff;
+    color: lightslategrey;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid darkslategray;
+    margin-bottom: 1px;
+}
+#action{
+    float: left;
+    position: absolute;
+}
+/*Carte*/
+#cy{  
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 300px;
+}
+#carte{
+    margin-left: 245px;
+    margin-right: 245px;
+    width: 75%;
+    height: 750px;
+    border: 1px solid red;
+}
