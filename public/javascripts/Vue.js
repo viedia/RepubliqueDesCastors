@@ -255,11 +255,11 @@ class Vue {
         for(var i =0; i<tabBat.length;i++){
             batS = tabBat[i];
             if(batS.getVoisins().length == 0){
-                this.cy.add([{data: {id: batS.getNom(), name:batS.getNom()}}]);
+                this.cy.add([{ data: { id: batS.getNom(), name: batS.getNom() }, position: { x: 225, y: -30 } }]);
             }else{
                 for(var j =0; j<batS.getVoisins().length;j++){
                     this.cy.add([{ 
-                        data: { id: batS.getNom(), name:batS.getNom() }  },
+                        data: { id: batS.getNom(), name:batS.getNom() }},
                         { data: { id: batS.getVoisins()[j].getNom(), name :batS.getVoisins()[j].getNom() } },
                         { data: { id:j,  source: batS.getNom(), target: batS.getVoisins()[j].getNom()} },
                     ])
@@ -275,16 +275,16 @@ class Vue {
             this.setFlux(i, value);
         }
     }
-
-    setFlux(idEdge, flot) {
+    
+    setFlux(idEdge, flot) { //modifie le flot de l'arrête avec l'id passé en param
       
         if ((idEdge <= this.cy.edges().length) && (idEdge > 0)) { // condition pour que l'id de l'arrête soit correct
             var idE = '[id="e' + idEdge + '"]'; // id de l'arrête
-            var Max = this.cy.edges(idE).data('flotMax');// on recupère le flotMax
+            var Max = this.getFlotMax(idEdge);// on recupère le flotMax
 
             if ((flot => 0) && (flot <= Max)) { //flot positif et inférieur à flotMax
                 var flux = flot + '/' + Max;
-
+                this.cy.edges(idE).data('flot', flot);
                 this.cy.edges(idE).data('flux', flux); // set flux à la valeur voulue
 
             } else {
@@ -296,6 +296,25 @@ class Vue {
         }
         
     }
+
+    getFlot(idEdge) {
+        if ((idEdge <= this.cy.edges().length) && (idEdge > 0)) { 
+            var idE = '[id="e' + idEdge + '"]'; // id de l'arrête 
+            var flot = this.cy.edges(idE).data('flot');// on recupère le flotMax
+            return flot;
+        }else
+            console.log("Aucune arrete n " + idEdge + " dans le graphe");
+    }
+
+    getFlotMax(idEdge) {
+        if ((idEdge <= this.cy.edges().length) && (idEdge > 0)) {
+            var idE = '[id="e' + idEdge + '"]'; // id de l'arrête 
+            var Max = this.cy.edges(idE).data('flotMax');// on recupère le flotMax
+            return Max;
+        }else
+            console.log("Aucune arrete n " + idEdge + " dans le graphe");
+    }
+
 
 
 }
