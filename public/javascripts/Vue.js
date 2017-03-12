@@ -190,8 +190,7 @@ class Vue {
             layout: {
                 name: 'preset',
                 fit: true,
-                zoom: 2,
-                position:225
+                zoom: 2
             },
 
             // so we can see the ids etc
@@ -220,7 +219,7 @@ class Vue {
         });
              
         this.afficherVille();
-        this.gestionFlux();
+        this.initFlux();
     }
 
     attacherEvenements() {
@@ -269,18 +268,34 @@ class Vue {
         }
     }
 
-    gestionFlux() {
-        for (var i = 1; i <= this.cy.collection("edge").length; i++)// parcours des arrêtes
+    initFlux() {//Initialisation des flux
+        for (var i = 1; i <= this.cy.edges().length; i++)// parcours des arrêtes
         {
-            var idE = '[id="e' + i + '"]'; //id de l'arrête traitée
-            var Max = this.cy.edges(idE).data('flotMax');// on recupère le flotMax
-            var flot = this.cy.edges(idE).data('flot');// on recupère le flot
-            var flux = flot + '/' + Max;
-
-            this.cy.edges(idE).data('flux', flux); // set flux à la bonne valeurs
-
-
+            var value = 0;
+            this.setFlux(i, value);
         }
     }
+
+    setFlux(idEdge, flot) {
+      
+        if ((idEdge <= this.cy.edges().length) && (idEdge > 0)) { // condition pour que l'id de l'arrête soit correct
+            var idE = '[id="e' + idEdge + '"]'; // id de l'arrête
+            var Max = this.cy.edges(idE).data('flotMax');// on recupère le flotMax
+
+            if ((flot => 0) && (flot <= Max)) { //flot positif et inférieur à flotMax
+                var flux = flot + '/' + Max;
+
+                this.cy.edges(idE).data('flux', flux); // set flux à la valeur voulue
+
+            } else {
+                alert("flux incorrect pour l'arrete n "+idEdge);
+            }
+           
+        } else {
+            console.log("Aucune arrete n " + idEdge+" dans le graphe");
+        }
+        
+    }
+
 
 }
