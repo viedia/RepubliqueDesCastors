@@ -220,6 +220,7 @@ class Vue {
              
         this.afficherVille();
         this.initFlux();
+        this.initFluxConfig1();
     }
 
     attacherEvenements() {
@@ -255,7 +256,7 @@ class Vue {
         for(var i =0; i<tabBat.length;i++){
             batS = tabBat[i];
             if(batS.getVoisins().length == 0){
-                this.cy.add([{ data: { id: batS.getNom(), name: batS.getNom() }, position: { x: 225, y: -30 } }]);
+                this.cy.add([{ data: { id: batS.getNom(), name: batS.getNom() }, position: { x: 225, y: -15 } }]);
             }else{
                 for(var j =0; j<batS.getVoisins().length;j++){
                     this.cy.add([{ 
@@ -275,8 +276,26 @@ class Vue {
             this.setFlux(i, value);
         }
     }
-    
-    setFlux(idEdge, flot) { //modifie le flot de l'arrête avec l'id passé en param
+
+    initFluxConfig1() {
+        var conf = [];
+        var that = this;
+        $.getJSON("JSON/Configuration1.json", function (json) {
+            for (var i = 1; i <= that.cy.edges().length; i++)// parcours des arrêtes
+            {
+                that.setFlux(i, json[i - 1]); // le tableau JSON commence à 0 donc json[i-1]
+            }
+        });
+        
+    }
+
+    /**
+    * Modifie le flot de l'arrête avec l'id passé en param
+    *
+    * @param idEdge entier positif
+    * @param flot entier positif
+    */
+    setFlux(idEdge, flot) { 
       
         if ((idEdge <= this.cy.edges().length) && (idEdge > 0)) { // condition pour que l'id de l'arrête soit correct
             var idE = '[id="e' + idEdge + '"]'; // id de l'arrête
@@ -314,6 +333,7 @@ class Vue {
         }else
             console.log("Aucune arrete n " + idEdge + " dans le graphe");
     }
+
 
 
 
