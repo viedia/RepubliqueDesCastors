@@ -152,7 +152,7 @@ class Vue {
                           id: 'e10',
                           source: 'C',
                           target: 'F',
-                          flotMax: 5,
+                          flotMax: 25,
                           flot: 0,
                           flux: ''
                       }
