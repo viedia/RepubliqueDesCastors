@@ -31,10 +31,13 @@ class Vue {
             that.controleur.selectionnerOnglet($(this));
         });
         $('.finance').click(function () {
-            that.ouvrirFenetreSecondaire("Finance", "" );
+            that.ouvrirFenetreSecondaire("Finance", "La quantité d'argent disponible est :");
         });
         $('.riviere').click(function () {
             that.ouvrirFenetreSecondaire("Nourriture", "La quantité de nourriture est de :");
+        });
+        $('.mairie').click(function () {
+            that.ouvrirFenetreSecondaire("Mairie", "");
         });
         $('#btn-passer').click(function(){
             that.controleur.jourSuivant()
@@ -48,23 +51,20 @@ class Vue {
         var position = $('.onglet').index(o);
         $('.panelOnglet').eq(position).addClass('actif')
     }
-
-    ouvrirFenetreNourriture()
-    {
-        document.getElementById("qte_Nourriture").innerText = this.controleur.getVille().getQteNourriture();
-    }
     ouvrirFenetreSecondaire(type, texte)
     {
-        if (type == "Fiance")
+        if (type == "Finance")
         {
-           
+            document.getElementById("qte_Argent").innerText = texte + this.controleur.getVille().getQteArgent();
+            document.getElementById("prod_Argent").innerText = texte + this.controleur.getVille().getGainArgent() + "/jour";
         }else if(type == "Nourriture")
         {
-            document.getElementById("qte_Nourriture").innerText = texte + this.controleur.getVille().getQteNourriture() ;
+            document.getElementById("qte_Nourriture").innerText = texte + this.controleur.getVille().getQteNourriture();
+            document.getElementById("prod_Nourriture").innerText = texte + this.controleur.getVille().getProducitonNourriture();
         }
-        else (type == "Transport")
+        else (type == "Mairie")
         {
-
+            document.getElementById("informations").innerText = "nombre d'habitants :" + this.controleur.getVille().getQteHabitant() + "\rréserve de nouriture" + this.controleur.getVille().getQteNourriture() + "\rargent disponiqble : " + this.controleur.getVille().getQteArgent();
         }
     }
 

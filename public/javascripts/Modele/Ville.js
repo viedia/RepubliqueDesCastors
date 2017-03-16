@@ -4,9 +4,12 @@ class Ville
     constructor()
     {
         var bat = new Batiment("Mairie");
+        this.batiments = [bat];
+        this.ajouterBatiment(new Batiment("Reserve"), bat);
         this.population = new Population();
         this.stockNourriture = new Nourriture();
-        this.batiments = [bat];
+        this.argent = new Monnaie();
+
     }
 
     ajouterBatiment(batiment, voisin = null)
@@ -28,6 +31,7 @@ class Ville
     jourSuivant()
     {
         this.stockNourriture.jourSuivant(this.population.getQuantite());  
+        this.argent.jourSuivant(this.population.getQuantite());
     }
     getBatiments()
     {
@@ -37,5 +41,21 @@ class Ville
     getQteNourriture()
     {
         return this.stockNourriture.getQuantite() ;
+    }
+    getQteArgent()
+    {
+        return this.argent.getQuantite() ;
+    }
+    getQteHabitant()
+    {
+        return this.population.getQuantite() ;
+    }
+    getProductionNourriture()
+    {
+        return this.stockNourriture.getProduciton();
+    }
+    getGainArgent()
+    {
+        return this.argent.getGain();
     }
 }

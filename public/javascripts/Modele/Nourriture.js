@@ -4,16 +4,20 @@ class Nourriture
     constructor()
     {
         this.quantite = 1000;
+        this.production = 0;
     }
 
     jourSuivant(nbPop)
     {
         this.quantite -=nbPop;
-        console.log(this.quantite);
     }
 
     getQuantite()
     {
         return this.quantite;
+    }
+
+    getProduction() {
+        return this.production;
     }
 }
