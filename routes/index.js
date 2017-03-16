@@ -11,5 +11,10 @@ router.get('/indexFinance', function (req, res) {
     res.render('indexFinance');
 });
 
+/* GET probleme page. */
+router.get('/probleme', function (req, res) {
+    res.render('probleme');
+});
+
 
 module.exports = router;

@@ -14,7 +14,8 @@ class controleur {
     }
 
     initialiser() {
-        this.vue = new Vue(this);
+        //this.vue = new Vue(this);
+        this.vue = new VueProbleme(this, new ProblemeTransport());
     }
 
     selectionnerOnglet(o) {
