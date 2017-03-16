@@ -33,4 +33,9 @@ class Ville
     {
         return this.batiments;
     }
+
+    getQteNourriture()
+    {
+        return this.stockNourriture.getQuantite() ;
+    }
 }

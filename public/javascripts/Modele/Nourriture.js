@@ -11,4 +11,9 @@ class Nourriture
         this.quantite -=nbPop;
         console.log(this.quantite);
     }
+
+    getQuantite()
+    {
+        return this.quantite;
+    }
 }
