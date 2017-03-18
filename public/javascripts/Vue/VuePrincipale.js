@@ -31,10 +31,10 @@ class Vue {
             that.controleur.selectionnerOnglet($(this));
         });
         $('.finance').click(function () {
-            that.ouvrirFenetreSecondaire("Finance", "La quantité d'argent disponible est :");
+            that.ouvrirFenetreSecondaire("Finance", "La quantitï¿½ d'argent disponible est :");
         });
         $('.riviere').click(function () {
-            that.ouvrirFenetreSecondaire("Nourriture", "La quantité de nourriture est de :");
+            that.ouvrirFenetreSecondaire("Nourriture", "La quantitï¿½ de nourriture est de :");
         });
         $('.mairie').click(function () {
             that.ouvrirFenetreSecondaire("Mairie", "");
@@ -60,11 +60,11 @@ class Vue {
         }else if(type == "Nourriture")
         {
             document.getElementById("qte_Nourriture").innerText = texte + this.controleur.getVille().getQteNourriture();
-            document.getElementById("prod_Nourriture").innerText = texte + this.controleur.getVille().getProducitonNourriture();
+            document.getElementById("prod_Nourriture").innerText = texte + this.controleur.getVille().getProductionNourriture();
         }
-        else (type == "Mairie")
+        else if (type == "Mairie")
         {
-            document.getElementById("informations").innerText = "nombre d'habitants :" + this.controleur.getVille().getQteHabitant() + "\rréserve de nouriture" + this.controleur.getVille().getQteNourriture() + "\rargent disponiqble : " + this.controleur.getVille().getQteArgent();
+            document.getElementById("informations").innerText = "nombre d'habitants :" + this.controleur.getVille().getQteHabitant() + "\rrï¿½serve de nouriture" + this.controleur.getVille().getQteNourriture() + "\rargent disponiqble : " + this.controleur.getVille().getQteArgent();
         }
     }
 
