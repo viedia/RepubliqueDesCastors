@@ -4,34 +4,25 @@ class VueProbleme
     constructor(c, probleme)
     {
         this.controleur = c;
-        this.pb = new ProblemeTransport();
+        this.pb = probleme;
         //this.attacherEvenements();
         this.cy = cytoscape({
-            container: $('#cy'),
-            elements: [],
-
+            container: $('#cyT'),
             layout: {
                 name: 'preset',
                 fit: true,
                 zoom: 2
             },
-
             // so we can see the ids etc
             style: [
                 {
                     selector: 'node',
                     style: {
-                        'content': 'data(id)'
+                        'content': 'data(id)',        
+                        'background-color': '#666',
+                        'label': 'data(id)'
                     }
                 },
-
-                {
-                    selector: ':parent',
-                    style: {
-                        'background-opacity': 0.6
-                    }
-                },
-
                 {
                     selector: 'edge',
                     style: {
@@ -40,30 +31,27 @@ class VueProbleme
                 }
             ]
         });
-        
-        this.loader = new ChargeurJSON(this.pb,this.controleur);
-
-        
+        this.afficherGraphe();
     }
 
     afficherGraphe(){
-        var Arr,Som;
+        var batS,bat;
         var temp = this.pb.getRepresentation();
-        var tabArr = temp.getArretes();
-        var tabNoeud = temp.getNoeuds();
-        for (var i = 0; i < tabNoeud.length; i++) {
-            Som = tabNoeud[i];
-            
-            this.cy.add([
-                { data: { id: Som.getNom() }, position: { x: Som.getX(), y: Som.getY() } }
-            ])
-        }
-
-        for(var i =0; i<tabArr.length;i++){
-            Arr = tabArr[i];
-            this.cy.add([
-                { data: { id: Arr.getId(), nom: Arr.getNom(), source: Arr.getDepart(), target: Arr.getArrivee(), flotMax: Arr.getFlotMax(), flot: Arr.getFlot(), flux: Arr.getFlot() + "/" + Arr.getFlotMax() } }
+        var tabBat = temp.getArretes();
+        for(var i =0; i<tabBat.length;i++){
+            batS = tabBat[i];
+            this.cy.add([{
+                data: { id: batS.getSommets()[0].getNom() }
+                },
+                { data: { id: batS.getSommets()[1].getNom() } },
+                { data: { id: batS.getNom() , 
+                        source: batS.getSommets()[0].getNom(), 
+                        target:  batS.getSommets()[1].getNom(), 
+                        flux:batS.getFlot()+"/"+batS.getFlotMax() , 
+                        position:{x: 700, y: 1500} } 
+                }
                 ])     
+            
         }
     }
 }

@@ -5,6 +5,8 @@ class Batiment
     {
         this.nom = nomBatiment;
         this.voisins = voisinage;
+        this.niveau = 1;
+        this.listeProbleme = this.initListeProbleme(); 
     }
 
     ajouterVoisin(nouveauVoisin)
@@ -13,6 +15,17 @@ class Batiment
         {   
             this.voisins.push(nouveauVoisin);
          }
+    }
+
+    ameliorer()
+    {
+        this.niveau +=1;
+    }
+
+    initListeProbleme()
+    {
+        // mettre ici le chemin du fichier à charger et les traitement
+        return null ; // retourner un tableau avec les graphes
     }
     getNom()
     {

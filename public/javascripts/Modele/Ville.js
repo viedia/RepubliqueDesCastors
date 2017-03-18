@@ -52,7 +52,7 @@ class Ville
     }
     getProductionNourriture()
     {
-        return this.stockNourriture.getProduciton();
+        return this.stockNourriture.getProduction();
     }
     getGainArgent()
     {

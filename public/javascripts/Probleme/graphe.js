@@ -1,27 +1,13 @@
 "use strict";
 class Graphe
 {
-    constructor(tabArretes, tabSommet)
+    constructor(tabArrete = Array[0])
     {
-        this.arretes = tabArretes;
-        this.noeuds = tabSommet;
+        this.arretes = tabArrete;
     }
 
     getArretes()
     {
         return this.arretes;
-    }
-
-    getNoeuds() {
-        return this.noeuds;
-    }
-
-
-    ajouterArr(arr) {
-        this.arretes.push(arr);
-    }
-
-    ajouterNoeud(n) {
-        this.noeuds.push(n);
     }
 }

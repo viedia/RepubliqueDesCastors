@@ -31,10 +31,10 @@ class Vue {
             that.controleur.selectionnerOnglet($(this));
         });
         $('.finance').click(function () {
-            that.ouvrirFenetreSecondaire("Finance", "La quantit� d'argent disponible est :");
+            that.ouvrirFenetreSecondaire("Finance", "La quantité d'argent disponible est :");
         });
         $('.riviere').click(function () {
-            that.ouvrirFenetreSecondaire("Nourriture", "La quantit� de nourriture est de :");
+            that.ouvrirFenetreSecondaire("Nourriture", "La quantité de nourriture est de :");
         });
         $('.mairie').click(function () {
             that.ouvrirFenetreSecondaire("Mairie", "");
@@ -61,6 +61,7 @@ class Vue {
         {
             document.getElementById("qte_Nourriture").innerText = texte + this.controleur.getVille().getQteNourriture();
             document.getElementById("prod_Nourriture").innerText = texte + this.controleur.getVille().getProductionNourriture();
+            var v2 = new VueProbleme(this, new ProblemeTransport());
         }
         else if (type == "Mairie")
         {

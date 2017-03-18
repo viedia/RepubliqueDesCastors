@@ -1,18 +1,12 @@
 "use strict";
-class Arrete
+class arrete
 {
-    constructor(id,nom, depart, arrivee, max, flot)
+    constructor(depart, arrivee,nom, max)
     {
-        this.id = id;
         this.nom =nom;
         this.flotMax = max;
-        this.flot = flot;
-        this.depart = depart;
-        this.arrivee = arrivee;
-    }
-
-    getId() {
-        return this.id;
+        this.flot = 0;
+        this.sommets = [depart, arrivee];
     }
 
     getNom()
@@ -35,11 +29,4 @@ class Arrete
     {
         this.flot = val;
     }
-    getDepart() {
-        return this.depart;
-    }
-    getArrivee() {
-        return this.arrivee;
-    }
-
 }
