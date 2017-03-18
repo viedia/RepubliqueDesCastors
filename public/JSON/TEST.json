@@ -1,0 +1,181 @@
+{
+    "arretes": [
+        {
+            "id": 1,
+            "nom": "SA",
+            "source": "Source",
+            "cible": "A",
+            "flotMax": 40,
+            "flot": 0
+        },
+        {
+            "id": 2,
+            "nom": "SB",
+            "source": "Source",
+            "cible": "B",
+            "flotMax": 20,
+            "flot": 0
+        },
+        {
+            "id": 3,
+            "nom": "SC",
+            "source": "Source",
+            "cible": "C",
+            "flotMax": 10,
+            "flot": 0
+        },
+        {
+            "id": 4,
+            "nom": "AE",
+            "source": "A",
+            "cible": "E",
+            "flotMax": 20,
+            "flot": 0
+        },
+        {
+            "id": 5,
+            "nom": "AD",
+            "source": "A",
+            "cible": "D",
+            "flotMax": 20,
+            "flot": 0
+        },
+        {
+            "id": 6,
+            "nom": "BF",
+            "source": "B",
+            "cible": "F",
+            "flotMax": 5,
+            "flot": 0
+        },
+        {
+            "id": 7,
+            "nom": "BD",
+            "source": "B",
+            "cible": "D",
+            "flotMax": 10,
+            "flot": 0
+        },
+        {
+            "id": 8,
+            "nom": "BE",
+            "source": "B",
+            "cible": "E",
+            "flotMax": 5,
+            "flot": 0
+        },
+        {
+            "id": 9,
+            "nom": "CE",
+            "source": "C",
+            "cible": "E",
+            "flotMax": 10,
+            "flot": 0
+        },
+        {
+            "id": 10,
+            "nom": "CF",
+            "source": "C",
+            "cible": "F",
+            "flotMax": 25,
+            "flot": 0
+        },
+        {
+            "id": 11,
+            "nom": "DP",
+            "source": "D",
+            "cible": "Puit",
+            "flotMax": 25,
+            "flot": 0
+        },
+        {
+            "id": 12,
+            "nom": "EP",
+            "source": "E",
+            "cible": "Puit",
+            "flotMax": 15,
+            "flot": 0
+        },
+        {
+            "id": 13,
+            "nom": "FP",
+            "source": "F",
+            "cible": "Puit",
+            "flotMax": 30,
+            "flot": 0
+        }
+    ],
+    "noeuds": [
+        {
+            "id": "Source",
+            "position": {
+                "x": 30,
+                "y": 100
+            },
+            "voisins":["A","B","C"]
+        },
+        {
+            "id": "A",
+            "position": {
+                "x": 150,
+                "y": 20
+            },
+            "voisins":["Source","D","E"]
+        },
+        {
+            "id": "B",
+            "position": {
+                "x": 105,
+                "y": 100
+            },
+            "voisins":["Source","D","E","F"]
+        },
+        {
+            "id": "C",
+            "position": {
+                "x": 150,
+                "y": 180
+            },
+            "voisins":["Source","F","E"]
+        },
+        {
+            "id": "D",
+            "position": {
+                "x": 300,
+                "y": 20
+            },
+            "voisins":["Puit","A","B"]
+        },
+        {
+            "id": "E",
+            "position": {
+                "x": 345,
+                "y": 100
+            },
+            "voisins":["Puit","A","B","C"]
+        },
+        {
+            "id": "F",
+            "position": {
+                "x": 300,
+                "y": 180
+            },
+            "voisins":["Puit","C","B"]
+        },
+        {
+            "id": "Puit",
+            "position": {
+                "x": 420,
+                "y": 100
+            },
+            "voisins":["D","E","F"]
+        }
+    ],
+    "Nourriture": {
+        "quantite": 1000,
+        "production": 0
+    },
+    "Population": {
+        "nombreIndividu": 100
+    }
+}
