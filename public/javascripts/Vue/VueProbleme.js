@@ -51,7 +51,6 @@ class VueProbleme
         var temp = this.pb.getRepresentation();
         var tabArr = temp.getArretes();
         var tabNoeud = temp.getNoeuds();
-        console.log(tabNoeud.length);
         for (var i = 0; i < tabNoeud.length; i++) {
             Som = tabNoeud[i];
             
