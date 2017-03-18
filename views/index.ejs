@@ -4,14 +4,16 @@
     <title>La république des Castors</title>
     <meta charset="UTF-8">
     <link href="/stylesheets/style.css" rel="stylesheet" />
+    <link href="/stylesheets/bootstrap.css" rel="stylesheet" />
+    <link href="/stylesheets/bootstrap-theme.css" rel="stylesheet" />
 </head>
 <body>
     <h1>La république des Castors</h1>
     <div id="menu">
         <ul class="onglets">
-            <li class="onglet transport actif">Salle des transport</li>
-            <li class="onglet finance">Salle des finances</li>
-            <li class="onglet riviere">Salle des rivières</li>
+            <li class="onglet mairie" data-toggle="modal" data-target="#fenModalMairie">Mairie</li>
+            <li class="onglet finance" data-toggle="modal" data-target="#fenModalFinance">Salle des finances</li>
+            <li class="onglet riviere" data-toggle="modal" data-target="#fenModalNourriture">Salle des rivières</li>
         </ul>
         <div id="action">
             <input id="btn-passer" type="button" value="Jour Suivant">
@@ -19,11 +21,70 @@
     </div>
     <div id="cy">
     </div>
+
+    <div id="fenetreModal">
+        <div class="modal fade" id="fenModalMairie" role="dialog" >
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="informations"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="fenModalFinance" role="dialog" >
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="qte_Argent"></p>
+                        <p id="prod_Argent"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="fenModalNourriture" role="dialog" >
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="qte_Nourriture"></p>
+                        <p id="prod_Nourriture"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!--Mettre les scripts en dessous-->
     <script src="/javascripts/controleur.js"></script>
     <script src="/javascripts/cytoscape.js"></script>
     <script src="/javascripts/cytoscape.min.js"></script>
     <script src="/javascripts/jquery-3.1.1.min.js"></script>
+    <script src="/javascripts/bootstrap.js"></script>
     <script src="/javascripts/main.js"></script>
     <script src="/javascripts/Vue/VuePrincipale.js"></script>
     <script src="/javascripts/Vue/VueProbleme.js"></script>
@@ -34,6 +95,7 @@
     <script src="/javascripts/Modele/Batiment.js"></script>
     <script src="/javascripts/Modele/Nourriture.js"></script>
     <script src="/javascripts/Modele/Population.js"></script>
+    <script src="/javascripts/Modele/Monnaie.js"></script>
     <script src="/javascripts/Modele/Ville.js"></script>
 
     <!--Mettre les fichiers JSON en dessous-->
