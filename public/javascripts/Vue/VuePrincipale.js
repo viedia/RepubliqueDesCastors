@@ -22,7 +22,7 @@ class Vue {
             ]
         });
              
-        this.afficherVille();
+        this.loader = new ChargeurJSONGraphe(this.controleur);
     }
 
     attacherEvenements() {
@@ -71,22 +71,28 @@ class Vue {
 /**
  * fonction refresh
  */
-    afficherVille(){
-        var batS,bat;
+
+    afficherGraphe() {
+        var batS, bat;
         var tabBat = this.controleur.getVille().getBatiments();
-        for(var i =0; i<tabBat.length;i++){
+        for (var i = 0; i < tabBat.length; i++) {
             batS = tabBat[i];
-            if(batS.getVoisins().length == 0){
-                this.cy.add([{ data: { id: batS.getNom(), name: batS.getNom() }, position: { x: 225, y: 50 } }]);
-            }else{
-                for(var j =0; j<batS.getVoisins().length;j++){
-                    this.cy.add([{ 
-                        data: { id: batS.getNom(), name:batS.getNom() }},
-                        { data: { id: batS.getVoisins()[j].getNom(), name :batS.getVoisins()[j].getNom() } },
-                        { data: { id:j,  source: batS.getNom(), target: batS.getVoisins()[j].getNom()} },
-                    ])
-                }
+            this.cy.add([{ data: { id: batS.getNom(), name: batS.getNom() }, position: { x: batS.getX(), y: batS.getY() } }]);// ajout du noeuds
+        }
+        for (var i = 0; i < tabBat.length; i++) {
+            batS = tabBat[i];
+            for (var j = 0; j < batS.getVoisins().length; j++) {
+                var voisin = batS.getVoisins()[j];
+                
+                this.cy.add([
+                { data: { id: batS.getNom().substring(0, 1) + voisin.substring(0,1), source: batS.getNom(), target: voisin } }]);
             }
         }
+        
+            
+           
+                
+            
+        
     }
 }

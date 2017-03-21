@@ -1,10 +1,12 @@
 "use strict";
 class Batiment
 {
-    constructor(nomBatiment, voisinage = Array(0))
+    constructor(nomBatiment,x,y)
     {
         this.nom = nomBatiment;
-        this.voisins = voisinage;
+        this.voisins = new Array();
+        this.x = x;
+        this.y = y;
     }
 
     ajouterVoisin(nouveauVoisin)
@@ -22,5 +24,11 @@ class Batiment
     getVoisins()
     {
         return this.voisins;
+    }
+    getX() {
+        return this.x;
+    }
+    getY() {
+        return this.y;
     }
 }

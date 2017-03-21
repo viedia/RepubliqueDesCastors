@@ -1,7 +1,7 @@
 ﻿"use strict";
 class controleur {
      constructor() {
-        //this.vue = null;
+        this.vue = null;
         this.jour = 1;
         this.ville = new Ville();
         this.vueProb = null;
@@ -16,14 +16,17 @@ class controleur {
     }
 
     initialiser() {
-      //  this.vue = new Vue(this);
-        this.vueProb = new VueProbleme(this);
+         this.vue = new Vue(this);
+        //this.vueProb = new VueProbleme(this);
         
 
        // this.vue = new VueProbleme(this, new ProblemeTransport());
     }
+    
     actualiser() {
-        this.vueProb.afficherGraphe();
+
+        this.vue.afficherGraphe();
+        //this.vueProb.afficherGraphe();
     }
 
     selectionnerOnglet(o) {

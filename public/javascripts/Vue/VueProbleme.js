@@ -41,8 +41,8 @@ class VueProbleme
             ]
         });
         
-        this.loader = new ChargeurJSON(this.pb,this.controleur);
-
+        //this.loader = new ChargeurJSONFlux(this.pb,this.controleur);
+        this.afficherGraphe();
         
     }
 

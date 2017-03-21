@@ -3,7 +3,7 @@ class Nourriture
 {
     constructor()
     {
-        this.quantite = 1000;
+        this.quantite = 0;
         this.production = 0;
     }
 
@@ -19,5 +19,9 @@ class Nourriture
 
     getProduction() {
         return this.production;
+    }
+    SetAll(qte, prod) {
+        this.quantite = qte;
+        this.production = prod;
     }
 }

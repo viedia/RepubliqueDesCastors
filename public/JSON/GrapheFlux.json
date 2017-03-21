@@ -170,12 +170,5 @@
             },
             "voisins":["D","E","F"]
         }
-    ],
-    "Nourriture": {
-        "quantite": 1000,
-        "production": 0
-    },
-    "Population": {
-        "nombreIndividu": 100
-    }
+    ]
 }

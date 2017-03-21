@@ -3,16 +3,16 @@ class Ville
 {
     constructor()
     {
-        var bat = new Batiment("Mairie");
-        this.batiments = [bat];
-        this.ajouterBatiment(new Batiment("Reserve"), bat);
+        //var bat = new Batiment("Mairie");
+        this.batiments = [];
+        //this.ajouterBatiment(new Batiment("Reserve"), bat);
         this.population = new Population();
         this.stockNourriture = new Nourriture();
         this.argent = new Monnaie();
 
     }
 
-    ajouterBatiment(batiment, voisin = null)
+    ajouterBatiment(batiment, voisin)
     {
         var nouveauBat= batiment;
         this.batiments.push(nouveauBat);
@@ -52,10 +52,16 @@ class Ville
     }
     getProductionNourriture()
     {
-        return this.stockNourriture.getProduciton();
+        return this.stockNourriture.getProduction();
     }
     getGainArgent()
     {
         return this.argent.getGain();
+    }
+    setNourriture(qte, prod) {
+        this.stockNourriture.SetAll(qte, prod);
+    }
+    setPopulation(pop) {
+        this.population.setPop(pop);
     }
 }

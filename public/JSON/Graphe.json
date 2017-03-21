@@ -1,0 +1,93 @@
+﻿{
+  "noeuds": [
+    {
+      "id": "Mairie",
+      "position": {
+        "x": 30,
+        "y": 120
+      },
+      "voisins": [ "Ferme", "Usine", "Logement","Barrage" ]
+    },
+    {
+      "id": "Ferme",
+      "position": {
+        "x": 150,
+        "y": 70
+      },
+      "voisins": [ "Mairie", "Usine"]
+    },
+    {
+      "id": "Usine",
+      "position": {
+        "x": 205,
+        "y": 120
+      },
+      "voisins": [ "Mairie", "Logement", "Ferme" ]
+    },
+    {
+      "id": "Logement",
+      "position": {
+        "x": 150,
+        "y": 200
+      },
+      "voisins": [ "Mairie", "Barrage", "Usine" ]
+    },
+    {
+      "id": "Barrage",
+      "position": {
+        "x": 135,
+        "y": 155
+      },
+      "voisins": [ "Mairie", "Logement"]
+    }],
+   "arretes": [
+        {
+            "id": 1,
+            "nom": "MF",
+            "source": "Mairie",
+            "cible": "Ferme"
+        },
+        {
+            "id": 2,
+            "nom": "ML",
+            "source": "Mairie",
+            "cible": "Logement"
+        },
+        {
+            "id": 3,
+            "nom": "MU",
+            "source": "Mairie",
+            "cible": "Usine"
+        },
+        {
+            "id": 4,
+            "nom": "MB",
+            "source": "Mairie",
+            "cible": "Barrage"
+        },
+        {
+            "id": 5,
+            "nom": "FU",
+            "source": "Ferme",
+            "cible": "Usine"
+        },
+    {
+      "id": 6,
+      "nom": "BF",
+      "source": "Usine",
+      "cible": "Logement"
+    },
+        {
+            "id": 7,
+            "nom": "LB",
+            "source": "Logement",
+            "cible": "Barrage"
+        }],
+    "nourriture": {
+        "quantite": 1000,
+        "production": 10
+    },
+    "population": {
+        "nombreIndividu": 150
+    }
+}

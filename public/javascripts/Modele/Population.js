@@ -3,11 +3,14 @@ class Population
 {
     constructor()
     {
-        this.nombreIndividu = 100;
+        this.nombreIndividu = 0;
     }
 
     getQuantite()
     {
         return this.nombreIndividu;
+    }
+    setPop(pop) {
+        this.nombreIndividu = pop;
     }
 }

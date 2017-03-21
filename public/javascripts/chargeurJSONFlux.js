@@ -1,6 +1,6 @@
 ﻿"use strict";
 
-class ChargeurJSON {
+class ChargeurJSONFlux {
 
     constructor(p,c) {
         this.json = null;
@@ -12,7 +12,7 @@ class ChargeurJSON {
     
     initialiserProbleme() {
         var that = this;
-        $.getJSON("JSON/TEST.json", function (json) {
+        $.getJSON("JSON/GrapheFlux.json", function (json) {
             var arretes = json.arretes;
             var noeuds = json.noeuds;
 
