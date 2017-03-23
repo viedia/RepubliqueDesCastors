@@ -15,7 +15,6 @@ class ChargeurJSONGraphe {
             var population = json.population.nombreIndividu;
             that.controleur.getVille().setNourriture(nourriture.quantite, nourriture.production);
             that.controleur.getVille().setPopulation(population);
-            console.log("production : "+ that.controleur.getVille().getProductionNourriture());
             for (var j = 0; j < noeuds.length; j++) {
                 var id = noeuds[j].id;
                 var x = noeuds[j].position.x;
