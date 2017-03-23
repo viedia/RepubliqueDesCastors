@@ -40,8 +40,12 @@ class Vue {
             that.ouvrirFenetreSecondaire("Mairie", "");
         });
         $('#btn-passer').click(function(){
-            that.controleur.jourSuivant()
+            that.controleur.jourSuivant();
         });
+        $('#btn-passer').click(function () {
+            console.log(that.cy.nodes);
+        });
+
     }
 
     selectionnerOnglet(o) {
