@@ -3,7 +3,7 @@ class Vue {
 
     constructor(c) {
         this.controleur = c;
-        this.attacherEvenements();
+        
         this.cy = cytoscape({
             container: $('#cy'),
             layout: {
@@ -23,6 +23,7 @@ class Vue {
         });
              
         this.loader = new ChargeurJSONGraphe(this.controleur);
+        this.attacherEvenements();
     }
 
     attacherEvenements() {
@@ -39,12 +40,29 @@ class Vue {
         $('.mairie').click(function () {
             that.ouvrirFenetreSecondaire("Mairie", "");
         });
+
         $('#btn-passer').click(function(){
             that.controleur.jourSuivant();
         });
-        $('#btn-passer').click(function () {
-            console.log(that.cy.nodes);
-        });
+
+       /* $('#btn-save').click(function () {
+            var that = this;
+            $.ajax({
+                url: 'xhr/save-games.php',
+                method: 'post',
+                datatype: 'json',
+                data: { games: that.games.toArray() },
+                success: function (resultat) {
+                    that.loadGamesFromServer(resultat);
+                    console.log('ok');
+                    that.notify();
+                },
+                error: function (error) { alert('saving failed') }
+            });
+            var nodes = that.cy.nodes()
+            for (var i = 0; i < nodes.length;i++)
+                console.log(nodes[i].json());
+        });*/
 
     }
 
